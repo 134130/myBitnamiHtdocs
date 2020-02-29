@@ -1,0 +1,109 @@
+.b_table {
+    border-top: 2px solid #3E4348;
+    border-collapse: collapse;
+}
+
+.b_table th,
+td {
+    border-bottom: 1px solid #3E4348;
+}
+
+.b_table th {
+    font-family: Noto Sans KR, Noto Sans KR;
+    font-size: 24px;
+}
+
+.b_table td {
+    font-family: Noto Sans KR, Noto Sans KR;
+    font-size: 20px;
+    text-align: center;
+}
+
+.b_no {
+    width: 70px;
+}
+
+.b_title {
+    width: 420px;
+}
+
+.b_writer {
+    width: 120px;
+}
+
+.b_created {
+    width: 160px;
+}
+
+.b_visited {
+    width: 70px;
+}
+
+.c_form input[name="c_content"] {
+    font-family: Noto Sans KR, Noto Sans KR;
+    font-size: 20px;
+    width: 700px;
+}
+
+.c_form input[name="c_writer"] {
+    font-family: Noto Sans KR, Noto Sans KR;
+    font-size: 20px;
+    width: 220px;
+}
+
+.c_form input[type="submit"] {
+    font-family: Noto Sans KR, Noto Sans KR;
+    font-size: 16px;
+    color: #000000;
+    border: none;
+    width: 80px;
+    height: 34px;
+
+}
+
+.c_table {
+    border-top: 2px solid #3E4348;
+    margin: 10px 0px 5px 0px;
+    border-collapse: collapse;
+}
+
+.c_table th,
+td {
+    border-bottom: 1px solid #3E4348;
+    padding: 5px 0px 5px 0px;
+}
+
+.c_table th {
+    font-family: Noto Sans KR, Noto Sans KR;
+    font-size: 24px;
+}
+
+.c_table td {
+    font-family: Noto Sans KR, Noto Sans KR;
+    font-size 20px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+}
+
+.c_table td[class="c_content"] {
+    font-family: Noto Sans KR, Noto Sans KR;
+    font-size 20px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.c_no {
+    width: 70px;
+}
+
+.c_content {
+    width: 640px;
+}
+
+.c_writer {
+    width: 120px;
+}
+
+.c_created {
+    width: 160px;
+}

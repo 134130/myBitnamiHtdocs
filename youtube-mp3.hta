@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Application Executer</title>
+    <HTA:APPLICATION ID="MyhtaApp" 
+        APPLICATIONNAME="Application Executer"
+        BORDER="no"
+        CAPTION="yes"
+        SHOWINTASKBAR="yes"
+        SINGLEINSTANCE="yes"
+        SYSMENU="yes"
+        SCROLL="no"
+        WINDOWSTATE="normal">
+    <script type="text/javascript" language="javascript">
+        function RunFile(aaa) {
+            var WshShell = new ActiveXObject("WScript.Shell");
+            var key = "python C:/Bitnami/wampstack-7.3.11-0/apache2/htdocs/servlets/php/youtubeAPI.py " + aaa;
+            var retVal = WshShell.run(key, 1, true);
+        }
+        function getParam() {
+            var regex = new RegExp("[\\?&]" + "search" + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+    </script>
+</head>
+<body>
+    <script>
+        RunFile(getParam());
+    </script>
+</body>
+</html>

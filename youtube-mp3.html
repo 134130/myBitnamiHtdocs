@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        input[type=search] {
+            width: 800px;
+            height: 100px;
+        }
+
+        input[type=submit] {}
+
+    </style>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-2.1.4.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js" type="text/javascript"></script>
+
+    <script>
+        jQuery(function() {
+            jQuery("#search").autocomplete({
+                source: function(request, response) {
+                    // console.log(request.term);
+                    var sqValue = [];
+                    jQuery.ajax({
+                        type: "POST",
+                        url: "http://suggestqueries.google.com/complete/search?hl=kr&ds=yt&client=youtube&",
+                        dataType: 'jsonp',
+                        data: jQuery.extend({
+                            q: request.term
+                        }, {}),
+                        success: function(data) {
+                            console.log(data[1]);
+                            obj = data[1];
+                            jQuery.each(obj, function(key, value) {
+                                sqValue.push(value[0]);
+                            });
+                            response(sqValue);
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <form method="get" action="./servlets/php/youtube_search.php">
+        <input type="search" name="search" id="search" autocomplete="off" class="ui-autocomplete-input">
+        <input type="submit">
+    </form>
+    <div class="upload" style="margin: 50px">
+        <form method="post" action="./sevlets/php/upload.php" enctype="multipart/form-data">
+            <input type="file" name="profile">
+            <input type="submit">
+        </form>
+    </div>
+</body>
+
+</html>
